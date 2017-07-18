@@ -2,12 +2,11 @@
 
 $host = $_SERVER['HTTP_HOST'];
 
-
-
-
-
-
-$debug = array('url' => "$host");
-echo "<pre>
-".json_encode($debug);".
-</pre>";
+switch ($host) {
+case "heroku.leaversmith.com":
+    echo "works!";
+    break;
+case "bins.leaversmith.com":
+    include('../bins/index.php');
+    break;
+}
